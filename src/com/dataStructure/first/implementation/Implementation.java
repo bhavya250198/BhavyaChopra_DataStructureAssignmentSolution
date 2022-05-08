@@ -29,20 +29,28 @@ public class Implementation {
     	   ArrayList<Integer> list = new ArrayList<Integer>();
     	   int index = getMax(arr);
     	   if(index ==0) {
-    		   System.out.println("Day 1");
+    		   System.out.println("Day:1");
     		   list.add(arr[0]);
     		   System.out.println(arr[index]);
 //    		  remainingLength= n-index-1;
     		  for(int i=(index+1);i<n;i++) {
-    			  System.out.println("Day"+(i+1));
+    			  System.out.println("Day:"+(i+1));
     			  difference = list.get(list.size()-1) - arr[i];
     			  if(difference == 1) {
     				  if(stack.size() == 0)
+    				  {
     				  System.out.println(arr[i]);
+    				  list.add(arr[i]);
+    				  listSize=list.size();
+    				  }
     				  else {
     					  System.out.print(arr[i]+" ");
-    					  for(int j =0;j<stack.size();j++) {
+    					  list.add(arr[i]);
+        				  listSize=list.size();
+        				  stackSize=stack.size();
+    					  while(stackSize > 0){
     						  System.out.print(stack.pop());
+    						  stackSize=stack.size();
     					  }
     				  }
     			  }
@@ -57,12 +65,12 @@ public class Implementation {
     		   for(int i=0;i<=index;i++) {
     			   if(i <= index-1)
     			   {
-    			   System.out.println("Day"+(i+1));
+    			   System.out.println("Day:"+(i+1));
     			   System.out.println("");
     			   stack.push(arr[i]);
     			   }
     			   else if(i == index) {
-    				   System.out.println("Day"+(i+1));
+    				   System.out.println("Day:"+(i+1));
     				   list.add(arr[index]);
     				   listSize=list.size();
     				   stackSize= stack.size();
@@ -89,10 +97,10 @@ public class Implementation {
     			   if(j == (index+1))
     			   {
     				   System.out.println();
-    				   System.out.println("Day"+(j+1));
+    				   System.out.println("Day:"+(j+1));
     			   }
     			   else
-    			   System.out.println("Day"+(j+1));
+    			   System.out.println("Day:"+(j+1));
     			   listSize=list.size();
     			   value = list.get(listSize-1);
     			   difference = value -arr[j];

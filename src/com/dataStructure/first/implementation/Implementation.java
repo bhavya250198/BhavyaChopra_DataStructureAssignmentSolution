@@ -49,8 +49,21 @@ public class Implementation {
         				  listSize=list.size();
         				  stackSize=stack.size();
     					  while(stackSize > 0){
-    						  System.out.print(stack.pop());
-    						  stackSize=stack.size();
+    						  value = list.get(listSize-1);
+       					   stackValue = stack.peek();
+       					   difference= value-stackValue;
+       					   if(difference == 1) {
+       						   stackPopValue = stack.pop();
+       						   stackSize= stack.size();
+       						   list.add(stackPopValue);
+       						   listSize=list.size();
+       						   System.out.print(stackPopValue+" ");
+       					   }
+       					   else
+       					   {
+       						   System.out.println("");
+       						  break;
+       					   }
     					  }
     				  }
     			  }
